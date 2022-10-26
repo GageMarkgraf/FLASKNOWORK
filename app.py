@@ -5,7 +5,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 global studentOrganisationDetails
-# Assign default 5 values to studentOrganisationDetails for Application  3.
+studentOrganisationDetails = {"Sneaky": "Cloud9", "Faker": "T1", "Jankos": "G2", "Deft": "DRX", "Yagao": "JDG"}
 
 
 @app.get('/')
