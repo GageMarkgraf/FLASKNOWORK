@@ -32,22 +32,30 @@ def checkNumber():
     number = request.form['number']
 
     # Write your to code here to check whether number is even or odd and render result.html page
-    return render_template('result.html', number = number)
-    
+    if number == "":
+        return render_template('result.html', number = "No number given")
+    if number.isdigit():
+        if int(number)%2 == 0:
+            return render_template('result.html', number = number + "even")
+        else:
+            return render_template('result.html', number = number + "odd")
+    else:
+        return render_template('result.html', number = "is not an integer")
 
 
 
 @app.get('/addStudentOrganisation')
 def displayStudentForm():
     # Complete this function to display studentFrom.html page
-    pass
+    return render_template('studentForm.html')
 
 
 @app.route('/addStudentOrganisation', methods=['POST'])
 def displayRegistrationPage():
     # Get student name and organisation from form.
     studentName = request.form['name']
-
+    organisation = request.form['organisation']
     # Append this value to studentOrganisationDetails
-
+    studentOrganisationDetails[studentName]= organisation
     # Display studentDetails.html with all students and organisations
+    return render_template('StudentDetails.html', studentOrganisationDetails=studentOrganisationDetails)
