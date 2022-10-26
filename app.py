@@ -36,11 +36,11 @@ def checkNumber():
         return render_template('result.html', number = "No number given")
     if number.isdigit():
         if int(number)%2 == 0:
-            return render_template('result.html', number = number + "even")
+            return render_template('result.html', number = number + " is even")
         else:
-            return render_template('result.html', number = number + "odd")
+            return render_template('result.html', number = number + " is odd")
     else:
-        return render_template('result.html', number = "is not an integer")
+        return render_template('result.html', number = " is not an integer")
 
 
 
