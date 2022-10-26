@@ -50,7 +50,7 @@ def displayStudentForm():
     return render_template('studentForm.html')
 
 
-@app.route('/addStudentOrganisation', methods=['POST'])
+@app.route('/studentdetails', methods=['POST'])
 def displayRegistrationPage():
     # Get student name and organisation from form.
     studentName = request.form['name']
